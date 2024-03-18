@@ -1,0 +1,2 @@
+- Mở terminal và chaỵ: npm start
+- Mặc định sẽ chạy cổng localhost:3000, có thể tuỳ chỉnh trong file index.js

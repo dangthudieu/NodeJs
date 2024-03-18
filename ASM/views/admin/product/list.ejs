@@ -1,0 +1,57 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-header d-flex justify-content-lg-between pb-0">
+        <h6>DÁNH SÁCH SẢN PHẨM</h6>
+        <a href="/admin/product/add" class="btn btn-primary"> THÊM </a>
+      </div>
+      <div class="card-body px-0 pt-0 pb-2">
+        <div class="table-responsive p-0">
+          <table class="table align-items-center mb-0">
+            <thead class="text-center" >
+              <tr>
+                <th
+                  class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                >
+                  STT
+                </th>
+                <th
+                  class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                >
+                  Sản Phẩm
+                </th><th
+                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+              >
+                Giá
+              </th>
+                <th
+                  class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                >
+                  Ngày nhập
+                </th>
+                <th class="text-secondary opacity-7"></th>
+                <th class="text-secondary opacity-7"></th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <% for (let i = 0; i < products.length; i++) { %>
+                <tr>
+                  <td><%- i + 1 %></td>
+                  <td><%- products[i].name %></td>
+                  <td><%- products[i].price %></td>
+                  <td><%- products[i].date %></td>
+                  <td><a href="/admin/product/detail/<%- products[i].id %>" class="btn btn-primary">chi tiết</a></td>
+                  <td><a href="" class="btn btn-danger">xóa</a></td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

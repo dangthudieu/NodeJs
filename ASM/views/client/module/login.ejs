@@ -1,0 +1,33 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="container mt-3">
+        <section class="row mx-auto">
+            <h1 class="text-center">
+                Đăng <span class="text-pastel"> Nhập</span>
+            </h1>
+            <form class="row p-5 pt-1 g-3" action="">
+                <div class="col-3 p-3  bg-light shadow rounded border mx-auto">
+                    <div class="col-12">
+                        <label for="user">Tên Đăng Nhập</label>
+                        <input type="text" name="user"  class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label for="password">Mật Khẩu</label>
+                        <input type="password" name="password"  class="form-control" />
+                    </div>
+                    <div class="col-12 text-end pt-2 pr-5">
+                        <button class="btn btn-danger">Đăng Nhập</button>
+                    </div>
+                    <!-- <div class="col-12">
+                        <label for="email">Email</label>
+                        <input type="email" name="user"  class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label for="user">Số Điện Thoại</label>
+                        <input type="text" name="user"  class="form-control" />
+                    </div> -->
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <%- include('../layouts/footer.ejs') %>

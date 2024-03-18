@@ -1,0 +1,96 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="container mt-3">
+  <h1 class="text-center">
+    <span class="text-pastel">Thêm Mới</span> Sản Phẩm
+  </h1>
+  <form
+    action="/client/product/create"
+    class="p-5 pt-1 g-3 row"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div class="col-7 bg-light shadow p-3 rounded border mx-auto">
+      <div class="col-md-12">
+        <label for="name" class="form-label">Tên Sản Phẩm</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-12">
+        <label for="price" class="form-label">Giá</label>
+        <input
+          type="text"
+          name="price"
+          id="price"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div class="col-md-12">
+        <label for="img" class="form-label">Hình Ảnh</label>
+        <input
+          type="file"
+          name="image"
+          id="image"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-12">
+        <!-- <label for="description" class="form-label">Ngày thêm</label> -->
+        <input
+          name="date"
+          type="hidden"
+          class="form-control"
+          id="date"
+          cols="30"
+          rows="3"
+          required
+        />
+      </div>
+      <div class="col-md-12">
+        <label for="author" class="form-label">Tác giả</label>
+        <input
+          name="author"
+          class="form-control"
+          id="author"
+          cols="30"
+          rows="3"
+          required
+        />
+      </div>
+      <div class="col-md-12">
+        <label for="description" class="form-label">Thể loại</label>
+        <select name="idcategory" class="form-control" id="">
+          <option hidden value="">Chọn thể loại</option>
+          <% category.forEach((category) => { %>
+            <option  value="<%= category.id %>"><%= category.name %></option>
+          <% }); %>
+        </select>
+        
+      </div>
+      <div class="col-md-12">
+        <label for="description" class="form-label">Mô tả</label>
+        <textarea
+          name="description"
+          class="form-control"
+          id="description"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+      <div class="col-12 mt-3 text-end">
+        <button type="submit" class="btn btn-danger">Thêm</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

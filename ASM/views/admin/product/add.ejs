@@ -1,0 +1,68 @@
+<%- include('../layouts/header.ejs') %>
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>THÊM MỚI SẢN PHẨM</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <form action="/admin/product/add" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" id="id" />
+                <div class="row p-2 col-12">
+                  <div class="col-lg-6">
+                    <label for="name">Tên Sản Phẩm</label>
+                    <input type="text" name="name" id="name" placeholder="Nhập Tên Sản Phẩm" class="form-control" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="author">Tác Giả</label>
+                    <input type="text" name="author" id="author" placeholder="Ngày Tự Động Cập Nhật"
+                      class="form-control" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="">Danh Mục</label>
+                    <select class="form-control" name="idcategory" id="idcategory">
+                      <% categories.map(element=> { %>
+                        <option value="<%- element.idcategory %>">
+                          <%- element.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="">Giá</label>
+                    <input type="number" name="price" id="price" placeholder="Nhập Giá SẢN PHẨM" class="form-control" />
+                  </div>
+
+                  <div class="col-lg-6">
+                    <label for="">Hình Ảnh Sẩn Phẩm</label>
+                    <input type="file" name="image" id="image" class="form-control" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="">Mô Tả</label>
+                    <input type="text" name="description" id="description" placeholder="Nhập Mô Tả Tại Đây"
+                      class="form-control" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="date">Ngày Nhập</label>
+                    <input type="text" name="date" id="date" readonly placeholder="Ngày Tự Động Cập Nhật"
+                      class="form-control" />
+                  </div>
+
+                  <div class="d-flex justify-content-lg-end">
+                    <button type="submit" class="d-flex btn btn-primary">
+                      THÊM
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../layouts/footer.ejs') %>
+  </div>

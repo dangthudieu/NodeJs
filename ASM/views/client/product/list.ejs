@@ -1,0 +1,49 @@
+<%- include('../layouts/header.ejs', { title: 'Danh sách sản phẩm' }) %>
+<div class="container col-12 row mt-3">
+  <h1 class="text-center">Danh Sách Sản Phẩm</h1>
+  <section class="col-2 bg-light">
+    <% categories.forEach(category => { %>
+    <div class="p-3 m-1 border-bottom border-dark">
+      <a
+        class="dropdown-item"
+        href="/client/product/list/<%= category.idcategory %>">
+        <%= category.name %>
+      </a>
+    </div>
+    <% }); %>
+  </section>
+  <section class="row col-10 mx-auto">
+    <% products.forEach(element => { %>
+    <div class="col-4 p-3">
+      <a
+        href="/client/product/detail/<%= element.id %>"
+        class="text-decoration-none text-dark"
+      >
+        <div class="card shadow">
+          <div class="p-3 pb-0 img-fluid">
+            <img
+              src="/images/product/<%= element.img %>"
+              width="100%"
+              height="250"
+              class="rounded"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <div class="title">
+              <h5><%= element.name %></h5>
+            </div>
+            <h6>
+              <b class="text-pastel text-uppercase"><%= element.price %> VND</b>
+            </h6>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-danger">Thêm Giỏ Hàng</button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% }); %>
+  </section>
+</div>
+<%- include('../layouts/footer.ejs') %>
